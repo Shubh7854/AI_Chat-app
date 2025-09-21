@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ai-chat-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        value: mongodb+srv://shubham_db:YHJq4MkIjwm8Z9uB@cluster0.y7bqglx.mongodb.net/ai-chat-app?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: your-super-secret-jwt-key-for-production-change-this
+      - key: AI_PROVIDER
+        value: google
+      - key: GOOGLE_API_KEY
+        value: AIzaSyAutNXeikHoLrOlto7tuY4wk55nsXpD6lg

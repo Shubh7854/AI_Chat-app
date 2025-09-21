@@ -19,7 +19,25 @@ app.use('/api/notifications', require('./routes/notifications'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.json({ message: 'AI Chat API is running!' });
+  res.json({ 
+    message: 'AI Chat API is running!',
+    status: 'healthy',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'AI Chat Backend API',
+    status: 'running',
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth',
+      chat: '/api/chat',
+      notifications: '/api/notifications'
+    }
+  });
 });
 
 // Error handling middleware
