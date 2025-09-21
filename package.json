@@ -1,0 +1,28 @@
+{
+  "name": "ai-chat-app",
+  "version": "1.0.0",
+  "description": "AI Chat Application with Authentication",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "install-server": "cd backend && npm install",
+    "install-client": "cd frontend && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "setup": "node setup.js"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "express",
+    "mongodb",
+    "chat",
+    "ai"
+  ],
+  "author": "Shubh",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
